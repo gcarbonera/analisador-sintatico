@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analisador Sintático LL(1)</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="card">
+        <h1 class="title">Analisador Sintático LL(1)</h1>
+
+        <div id="grammar-info" class="grammar-info"></div>
+        <div id="parsing-table" class="parsing-table"></div>
+
+        <hr class="divider" />
+
+        <div class="controls">
+          <div class="toolbar">
+            <button id="btn-generate" class="btn btn--generate" type="button">
+              Gerar Sentença Válida
+            </button>
+
+            <input
+              id="sentence"
+              class="sentence-input"
+              type="text"
+              placeholder="Ex: a c c f"
+              aria-label="Sentença a ser analisada"
+            />
+
+            <button id="btn-analyze" class="btn btn--analyze" type="button">Analisar</button>
+            <button id="btn-step-by-step" class="btn btn--step" type="button">Passo a passo</button>
+            <button id="btn-reset" class="btn btn--reset" type="button">Reiniciar</button>
+          </div>
+
+          <div id="step-controls" class="step-controls" hidden>
+            <button id="btn-next" class="btn btn--next" type="button">Próximo passo</button>
+            <span id="step-counter" class="step-counter"></span>
+          </div>
+
+          <div class="hint">
+            <small><b>OBS:</b> Deve-se adicionar uma letra e após ela um "espaço" (ex: a c c f).</small>
+          </div>
+        </div>
+
+        <div id="stack-visualizer" class="stack"></div>
+
+        <div id="result" class="result" role="status" hidden></div>
+      </div>
+    </div>
+
+    <script src="js/grammar.js"></script>
+    <script src="js/parser.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
